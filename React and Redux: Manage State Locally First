@@ -5,7 +5,8 @@ class DisplayMessages extends React.Component {
       input: '',
       messages: []
     }
-
+    this.handleChange = this.handleChange.bind(this);
+    this.submitMessage = this.submitMessage.bind(this);
   }
   // Add handleChange() and submitMessage() methods here
 
@@ -30,8 +31,8 @@ submitMessage(){
         { /* Render an input, button, and ul below this line */ }
 
 
-<input value={this.state.input} onChange={this.handleChange.bind(this)}></input>
-<button onClick={this.submitMessage.bind(this)}>Add message</button>
+<input value={this.state.input} onChange={this.handleChange}></input>
+<button onClick={this.submitMessage}>Add message</button>
 <ul>
 {this.state.messages.map((items, i)=>{
   return <li key={i}>{items}</li>
